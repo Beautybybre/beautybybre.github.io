@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beauty By Bre</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    body {
+      margin: 0;
+      background: repeating-linear-gradient(90deg, black 0 20px, white 20px 40px);
+      color: #e9a4c7;
+    }
+    main.container section, footer, nav {
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    h1, h2, h3 { text-align: center; color: #fff; }
+    .btn-toggle {
+      display: block;
+      margin: 1rem auto;
+      background-color: #e9a4c7;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: 4px solid #e9a4c7;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(233,164,199,0.7);
+    }
+    .notice {
+      background: black;
+      color: #e9a4c7;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .glow { animation: glowPulse 2s infinite; }
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 5px #e9a4c7, 0 0 15px #e9a4c7; opacity: 1; }
+      50% { text-shadow: 0 0 20px #e9a4c7, 0 0 30px #e9a4c7; opacity: 0.8; }
+    }
+    .flicker { animation: flicker 1.5s infinite; }
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 15px #e9a4c7, 0 0 30px #e9a4c7; }
+      20%, 22%, 24%, 55% { opacity: 0.3; text-shadow: none; }
+    }
+    .hero-img, .about-img, .services-img {
+      border: 4px solid #e9a4c7;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(233,164,199,0.7);
+      margin: 1rem auto;
+      display: block;
+    }
+    .hero-img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; }
+    .about-img { max-width: 300px; }
+    .services-img { max-width: 250px; margin: 0.5rem; }
+  </style>
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li><strong id="logo" class="glow">Beauty By Bre</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#bookings">Bookings</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="wisteria-hero">
+      <img src="hero-placeholder.jpg" alt="Bre Hero" class="hero-img">
+      <h1 class="title glow">Beauty By Bre</h1>
+      <p style="text-align:center;">Boss Girly Luxury Hair Styling ✨</p>
+      <button class="btn-toggle" onclick="toggleEffect()">Switch Glow/Neon</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="title glow">About</h2>
+      <img src="about-placeholder.jpg" alt="Bre About" class="about-img">
+      <p>Welcome to Beauty By Bre — where boss energy meets girly glam. I specialize in hair styling with luxury vibes and a personal touch.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2 class="title glow">Services</h2>
+      <ul>
+        <li><button onclick="selectService('Silk Press',85)">Silk Press – $85</button></li>
+        <li><button onclick="selectService('Sew-In Weave',200)">Sew-In Weave – $200</button></li>
+        <li><button onclick="selectService('Wig Install',150)">Wig Install – $150</button></li>
+        <li><button onclick="braidPolicyCheck()">Individual Braids – $250</button></li>
+      </ul>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+        <img src="services-placeholder.jpg" alt="Bre In Action" class="services-img">
+      </div>
+    </section>
+
+    <!-- Bookings Section -->
+    <section id="bookings">
+      <h2 class="title glow">Book Your Appointment</h2>
+      <div class="notice">
+        <strong>⚠️ $20 non-refundable deposit is required via Zelle, Cash App, or Apple Pay. Your appointment is only confirmed after deposit is sent.</strong>
+      </div>
+      <iframe src="https://calendly.com/beautybybreb" title="Calendly - Beauty By Bre"></iframe>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small><a href="#">Beauty By Bre</a> • <a href="#">All Rights Reserved</a></small>
+  </footer>
+
+  <script>
+    let isGlow = true;
+    function toggleEffect(){
+      const titles = document.querySelectorAll('.title, #logo');
+      titles.forEach(title => {
+        if(isGlow){ title.classList.remove('glow'); title.classList.add('flicker'); }
+        else { title.classList.remove('flicker'); title.classList.add('glow'); }
+      });
+      isGlow = !isGlow;
+    }
+    function selectService(service, price){
+      alert(service+" selected. Deposit: $20. Balance due: $"+(price-20));
+    }
+    function braidPolicyCheck(){
+      alert('⚠️ Reminder: Individual braids are not available on Saturdays or after 10 PM.');
+    }
+  </script>
+</body>
+</html>
