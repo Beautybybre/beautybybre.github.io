@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beauty By Bre</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/RKq6yyd.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    nav {
+      background-color: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+    }
+    h1, h2, h3 {
+      color: #ffcce6;
+      text-shadow: 0 0 10px #ffb6d9;
+    }
+    .glow {
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0% { text-shadow: 0 0 8px #ffb6d9; }
+      50% { text-shadow: 0 0 18px #ffb6d9; }
+      100% { text-shadow: 0 0 8px #ffb6d9; }
+    }
+    .book-btn {
+      background-color: #ffb6d9;
+      color: black;
+      border-radius: 6px;
+      padding: 0.75em 1.5em;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ffb6d9;
+      transition: all 0.3s ease;
+    }
+    .book-btn:hover {
+      background-color: #fff;
+      color: #000;
+      box-shadow: 0 0 20px #ffb6d9;
+    }
+    section {
+      margin: 2em auto;
+      max-width: 1000px;
+      background-color: rgba(0,0,0,0.5);
+      padding: 2em;
+      border-radius: 8px;
+    }
+    .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .photo-grid img {
+      width: 200px;
+      border: 2px solid #ffb6d9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ffb6d9;
+    }
+    footer {
+      margin-top: 2em;
+      padding: 1em;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="container-fluid">
+    <ul>
+      <li><strong class="glow">Beauty By Bre</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#deposit">Deposit</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section id="book">
+      <h2 class="glow">✨ Book the Look ✨</h2>
+      <p>Use the button below to view available services and book directly through Square.</p>
+      <a href="https://app.squareup.com/appointments/book/vav3e5xqcis0c1/LKBYR71R43RAR/start" target="_blank" class="book-btn">Book the Look</a>
+    </section>
+
+    <section id="about">
+      <h2>About Beauty By Bre</h2>
+      <p>At Beauty By Bre, my goal is simple — I want every client to leave my chair feeling confident, cared for, and absolutely beautiful.</p>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <p><strong>Please come with clean hair</strong></p>
+      <div class="photo-grid">
+        <img src="https://via.placeholder.com/200x200?text=Ponytails" alt="Ponytails">
+        <img src="https://via.placeholder.com/200x200?text=Quick+Weaves" alt="Quick Weaves">
+        <img src="https://via.placeholder.com/200x200?text=Sew+Ins" alt="Sew Ins">
+        <img src="https://via.placeholder.com/200x200?text=Braids" alt="Braids">
+        <img src="https://via.placeholder.com/200x200?text=Loc+Upkeep" alt="Loc Upkeep">
+      </div>
+      <p>Ponytails: No lace $60 | Frontal $80 | Double frontal $100<br>
+      Quick Weaves: Partial/Traditional $60 | Closure $80 | Frontal $100<br>
+      Sew Ins: Partial/Traditional $100 | Tribal $120 | Closure $130 | Frontal $160<br>
+      Braids: $20–$260 (varies by style)<br>
+      Loc Upkeep: $60</p>
+    </section>
+
+    <section id="deposit">
+      <h2>Deposit & Policies</h2>
+      <p>A $20 non-refundable deposit is required to secure your appointment.</p>
+      <p>Send deposits via <strong>Zelle / Cash App / Apple Pay</strong> to <strong>817-812-8233</strong>.</p>
+      <p>Deposits are non-refundable and non-transferable within 2 days of your appointment.</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Client Gallery</h2>
+      <div class="photo-grid">
+        <img src="https://via.placeholder.com/200x200?text=Client+1" alt="Client 1">
+        <img src="https://via.placeholder.com/200x200?text=Client+2" alt="Client 2">
+        <img src="https://via.placeholder.com/200x200?text=Client+3" alt="Client 3">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Beauty By Bre © All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
